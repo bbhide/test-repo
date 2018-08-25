@@ -1,0 +1,9 @@
+<!-- Target routing logic -->
+ <RouteRule name="Payment">
+   <Condition>(target.route.service = &quot;Payment&quot;)</Condition>
+   <TargetEndpoint>Payment</TargetEndpoint>
+ </RouteRule>
+ <RouteRule name="Payment">
+   <Condition>(target.route.service = &quot;Payment&quot;)</Condition>
+   <TargetEndpoint>Payment</TargetEndpoint>
+ </RouteRule>

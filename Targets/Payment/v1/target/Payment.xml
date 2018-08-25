@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TargetEndpoint name="Payment">
+    <Description>Payment</Description>
+	<FaultRules>
+		#target_faultrules_steps#
+	</FaultRules>
+	<DefaultFaultRule>
+		#target_defaultfaultrules_steps#
+	</DefaultFaultRule>
+    <PreFlow name="PreFlow">
+		<Request>
+			#target_preflow_request_steps#
+			#Payment_preflow_request_steps#
+		</Request>
+		<Response>
+			#target_preflow_response_steps#
+			#Payment_preflow_response_steps#
+		</Response>
+    </PreFlow>
+	<Flows>
+        <Flow name="PaymentAuthorization">
+        	<Condition>(target.route.operation = &quot;PaymentAuthorization&quot;)</Condition>
+			#Payment_PaymentAuthorization_req#
+			#Payment_PaymentAuthorization_resp#
+        </Flow>
+        <Flow name="PaymentDetails">
+        	<Condition>(target.route.operation = &quot;PaymentDetails&quot;)</Condition>
+			#Payment_PaymentDetails_req#
+			#Payment_PaymentDetails_resp#
+        </Flow>
+        <Flow name="PaymentCapture">
+        	<Condition>(target.route.operation = &quot;PaymentCapture&quot;)</Condition>
+			#Payment_PaymentCapture_req#
+			#Payment_PaymentCapture_resp#
+        </Flow>
+        <Flow name="PaymentReversal">
+        	<Condition>(target.route.operation = &quot;PaymentReversal&quot;)</Condition>
+			#Payment_PaymentReversal_req#
+			#Payment_PaymentReversal_resp#
+        </Flow>
+		#target_flows#
+	</Flows>
+    <PostFlow name="PostFlow">
+		<Request>
+			#target_postflow_request_steps#
+			#Payment_postflow_request_steps#
+		</Request>
+		<Response>
+			#target_postflow_response_steps#
+			#Payment_postflow_response_steps#
+		</Response>
+    </PostFlow>
+    <HTTPTargetConnection>
+    	<LoadBalancer>
+            <Server name="Payment">
+                <IsEnabled>true</IsEnabled>
+            </Server>
+        </LoadBalancer>
+        <Path>/core/v2/payments</Path>
+    </HTTPTargetConnection>
+</TargetEndpoint>

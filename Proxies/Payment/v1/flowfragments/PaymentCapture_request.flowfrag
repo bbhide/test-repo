@@ -1,0 +1,4 @@
+<!-- PaymentCapture Request Flow -->
+<Step>
+  <Name>PaymentCapture_AssignRoutingVariable</Name>
+</Step>

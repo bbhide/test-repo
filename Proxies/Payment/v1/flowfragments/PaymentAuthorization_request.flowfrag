@@ -1,0 +1,4 @@
+<!-- PaymentAuthorization Request Flow -->
+<Step>
+  <Name>PaymentAuthorization_AssignRoutingVariable</Name>
+</Step>

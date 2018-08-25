@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="PaymentProxyEndpoint">
+    <Description>Payment</Description>
+	#proxy_post_client_flow#
+	<FaultRules>
+			#security_fault_callout#
+			#traffic_management_fault#
+		#proxy_faultrules_steps#
+	</FaultRules>
+	<DefaultFaultRule name="All">
+		#proxy_defaultfaultrules_steps#
+	</DefaultFaultRule>
+	<PreFlow name="PreFlow">
+		<Request>
+                #spike_arrest_callout_step#
+                #access_control_step#
+			#proxy_preflow_request_steps#
+		</Request>
+		<Response>
+			#proxy_preflow_response_steps#
+		</Response>
+    </PreFlow>
+    <Flows>
+      #proxy_flows_sequence1#
+        <Flow name="PaymentAuthorization">
+          <Request>
+             #PaymentAuthorization_request#
+
+          </Request>
+			#PaymentAuthorization_response#
+			<Condition>(proxy.pathsuffix MatchesPath &quot;/core/v2/payments&quot;) and (request.verb = &quot;POST&quot;)</Condition>
+        </Flow>
+        <Flow name="PaymentDetails">
+          <Request>
+             #PaymentDetails_request#
+
+          </Request>
+			#PaymentDetails_response#
+			<Condition>(proxy.pathsuffix MatchesPath &quot;/core/v2/payments/{paymentid}&quot;) and (request.verb = &quot;GET&quot;)</Condition>
+        </Flow>
+        <Flow name="PaymentCapture">
+          <Request>
+             #PaymentCapture_request#
+
+          </Request>
+			#PaymentCapture_response#
+			<Condition>(proxy.pathsuffix MatchesPath &quot;/core/v2/payments/{paymentid}&quot;) and (request.verb = &quot;PUT&quot;)</Condition>
+        </Flow>
+        <Flow name="PaymentReversal">
+          <Request>
+             #PaymentReversal_request#
+
+          </Request>
+			#PaymentReversal_response#
+			<Condition>(proxy.pathsuffix MatchesPath &quot;/core/v2/payments/{paymentid}/refund&quot;) and (request.verb = &quot;POST&quot;)</Condition>
+        </Flow>
+			#cors_flow#
+		#proxy_flows#
+	</Flows>
+  <PostFlow name="PostFlow">
+		<Request>
+			#proxy_postflow_request_steps#
+		</Request>
+		<Response>
+				#proxy_postflow_response_cors_steps#
+			#proxy_postflow_response_steps#
+		</Response>
+  </PostFlow>
+  <PostClientFlow>
+  </PostClientFlow>
+    <HTTPProxyConnection>
+        <BasePath>/core/v2/payments</BasePath>
+		<VirtualHost>secure</VirtualHost>
+		<VirtualHost>default</VirtualHost>
+    </HTTPProxyConnection>
+    #Payment_routerules#
+</ProxyEndpoint>

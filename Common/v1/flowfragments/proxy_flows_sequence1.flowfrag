@@ -1,0 +1,20 @@
+<Flow name="WrongAccept">
+        <Description/>
+        <Request>
+            <Step>
+                <Name>FaultNotacceptable</Name>
+            </Step>
+        </Request>
+        <Response/>
+        <Condition>!(request.header.Accept JavaRegex "(text\/xml)(;.*)|(.*;)(text\/xml)(;.*)|text\/xml|(.*;)(text\/xml)|(application\/xml)(;.*)|(.*;)(application\/xml)(;.*)|application\/xml|(.*;)(application\/xml)|(application\/json)(;.*)|(.*;)(application\/json)(;.*)|application\/json|(.*;)(application\/json)")</Condition>
+    </Flow>
+    <Flow name="WrongContentType">
+        <Description/>
+        <Request>
+            <Step>
+                <Name>FaultUnsupportedMediaType</Name>
+            </Step>
+        </Request>
+        <Response/>
+        <Condition>(!(request.content = "")) and (!(request.content is null)) and !(request.header.Content-Type JavaRegex "(text\/xml)(;.*)|(.*;)(text\/xml)(;.*)|text\/xml|(.*;)(text\/xml)|(application\/xml)(;.*)|(.*;)(application\/xml)(;.*)|application\/xml|(.*;)(application\/xml)|(application\/json)(;.*)|(.*;)(application\/json)(;.*)|application\/json|(.*;)(application\/json)")</Condition>
+    </Flow>

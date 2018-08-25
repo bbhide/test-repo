@@ -1,0 +1,9 @@
+ <!-- CORS Response Headers-->
+        	<Step>
+                <Condition>request.verb != "OPTIONS"</Condition>
+                <Name>getCORSDomainList</Name>
+            </Step>
+            <Step>
+                <Condition>request.verb != "OPTIONS"</Condition>
+                <Name>CORSValidation</Name>
+            </Step>

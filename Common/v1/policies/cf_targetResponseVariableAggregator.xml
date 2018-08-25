@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="cf_targetResponseVariableAggregator">
+    <!-- Proxy Log Aggregator -->
+    <AssignVariable>
+        <Name>log.targetResponseCode</Name>
+        <Ref>response.status.code</Ref>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>log.targetResponseHeaderNames</Name>
+        <Ref>response.headers.names</Ref>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>log.targetResponse</Name>
+        <Ref>response.content</Ref>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>log.targetResponsePhrase</Name>
+        <Ref>response.reason.phrase</Ref>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>log.targetResStartTimeStamp</Name>
+        <Ref>target.received.start.timestamp</Ref>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>log.targetResEndTimeStamp</Name>
+        <Ref>target.received.end.timestamp</Ref>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>log.targetURI</Name>
+        <Ref>request.uri</Ref>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>log.targetPort</Name>
+        <Ref>target.port</Ref>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>log.targetHost</Name>
+        <Ref>target.host</Ref>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>log.targetScheme</Name>
+        <Ref>target.scheme</Ref>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>log.targetReqStartTimeStamp</Name>
+        <Ref>target.sent.start.timestamp</Ref>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>log.targetReqEndTimeStamp</Name>
+        <Ref>target.sent.end.timestamp</Ref>
+    </AssignVariable>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

@@ -1,0 +1,6 @@
+<FaultRule name="SecurityFaultHandling">
+    <Step>
+        <Name>SecurityFaultCallout</Name>
+    </Step>
+    <Condition>((oauthV2.VerifyAccessToken.failed equals true) or ((oauthV2.VerifyAPIKey.failed equals true) or (BasicAuthentication.DecodeBasicAuthentication.failed equals true) or (oauthV2.failed equals true)))</Condition>
+</FaultRule>

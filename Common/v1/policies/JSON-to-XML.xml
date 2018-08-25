@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<JSONToXML async="false" continueOnError="false" enabled="true" name="JSON-to-XML">
+    <DisplayName>JSON to XML</DisplayName>
+    <FaultRules/>
+    <Properties/>
+    <Options>
+        <NullValue>NULL</NullValue>
+        <TextNodeName>#text</TextNodeName>
+        <AttributePrefix>@</AttributePrefix>
+        <ObjectRootElementName>OAuth</ObjectRootElementName>
+    </Options>
+    <OutputVariable>response</OutputVariable>
+    <Source>response</Source>
+</JSONToXML>

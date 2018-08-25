@@ -1,0 +1,9 @@
+<!-- ProxyEndpoint Common Flows  -->
+<Flow name="unknown-resource">
+    <Request>
+        <Step>
+            <Name>Unknown_Resource</Name>
+        </Step>
+    </Request>
+    <Response/>
+</Flow>

@@ -1,0 +1,6 @@
+<FaultRule name="ThreatFaultHandling">
+  <Step>
+    <Name>ThreatFault</Name>
+  </Step>
+  <Condition>((jsonthreatprotection.JSONThreatValidation.failed equals true) or (threatProtectionEvaluationStatus == "failed"))</Condition>
+</FaultRule>

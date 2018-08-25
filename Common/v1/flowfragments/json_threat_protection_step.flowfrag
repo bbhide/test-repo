@@ -1,0 +1,4 @@
+<Step>
+  <Condition>((request.header.Content-Type equals "application/json") and ((request.verb equals "PUT") or (request.verb equals "POST")))</Condition>
+  <Name>JSONThreatValidation</Name>
+</Step>

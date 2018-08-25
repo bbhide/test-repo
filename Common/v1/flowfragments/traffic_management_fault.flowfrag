@@ -1,0 +1,6 @@
+	<FaultRule name="TrafficManagementFaultHandling">
+            <Step>
+                <Name>TrafficManagementFault</Name>
+            </Step>
+            <Condition>((ratelimit.SpikeArrest.failed equals true) or ((ratelimit.QuotaAtProductLevel.failed equals true)))</Condition>
+        </FaultRule>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="cf_targetVariableAggregator">
+    <!-- Proxy Log Aggregator -->
+    <AssignVariable>
+        <Name>log.targetVerb</Name>
+        <Ref>request.verb</Ref>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>log.targetHeaderNames</Name>
+        <Ref>request.headers.names</Ref>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>log.targetURI</Name>
+        <Ref>target.url</Ref>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>log.targetRequest</Name>
+        <Ref>request.content</Ref>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>log.routeName</Name>
+        <Ref>route.name</Ref>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>log.routeTargetName</Name>
+        <Ref>route.target</Ref>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>log.TargetName</Name>
+        <Ref>target.name</Ref>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>log.targetHeaderNames</Name>
+        <Ref>request.header.names</Ref>
+    </AssignVariable>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

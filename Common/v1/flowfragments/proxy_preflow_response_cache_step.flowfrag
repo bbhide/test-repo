@@ -1,0 +1,4 @@
+<Step>
+  <Condition>response.status.code JavaRegex "(2.*)"</Condition>
+  <Name>Response-Cache</Name>
+</Step>

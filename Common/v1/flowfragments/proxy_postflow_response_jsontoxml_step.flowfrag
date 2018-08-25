@@ -1,0 +1,4 @@
+<Step>
+  <Condition>((request.header.Accept JavaRegex ".*xml.*") and ((response.header.Content-Type JavaRegex ".*json")))</Condition>
+  <Name>JSON-to-XML</Name>
+</Step>

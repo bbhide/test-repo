@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="1" name="PaymentProxy">
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <Description>Payment</Description>
+    <Policies>
+    <!-- Values will be populated by deployment script -->
+    </Policies>	
+    <ProxyEndpoints>
+        <ProxyEndpoint>PaymentProxyEndpoint</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources>
+    	<!-- Values will be populated by deployment script -->
+	</Resources>
+    <TargetServers/>
+    <TargetEndpoints>
+    	<!-- Values will be populated by deployment script -->
+		<TargetEndpoint>StoreLocator</TargetEndpoint>
+		<TargetEndpoint>StoreLocator</TargetEndpoint>
+		<TargetEndpoint>FinancialAccountDetailsWSIL</TargetEndpoint>
+		<TargetEndpoint>availability</TargetEndpoint>
+		<TargetEndpoint>StoreLocator</TargetEndpoint>
+		<TargetEndpoint>StoreLocator</TargetEndpoint>
+		<TargetEndpoint>FinancialAccountDetailsWSIL</TargetEndpoint>
+		<TargetEndpoint>StoreLocator</TargetEndpoint>
+		<TargetEndpoint>StoreLocator</TargetEndpoint>
+		<TargetEndpoint>StoreLocator</TargetEndpoint>
+		<TargetEndpoint>StoreLocator</TargetEndpoint>
+		<TargetEndpoint>StoreLocator</TargetEndpoint>
+		<TargetEndpoint>StoreLocator</TargetEndpoint>
+		<TargetEndpoint>StoreLocator</TargetEndpoint>
+		<TargetEndpoint>StoreLocator</TargetEndpoint>
+		<TargetEndpoint>StoreLocator</TargetEndpoint>
+		<TargetEndpoint>StoreLocator</TargetEndpoint>
+		<TargetEndpoint>StoreLocator</TargetEndpoint>
+		<TargetEndpoint>FinancialAccountDetailsWSIL</TargetEndpoint>
+		<TargetEndpoint>FinancialAccountDetailsWSIL</TargetEndpoint>
+		<TargetEndpoint>availability</TargetEndpoint>
+		<TargetEndpoint>availability</TargetEndpoint>
+		<TargetEndpoint>availability</TargetEndpoint>
+		<TargetEndpoint>StoreLocator</TargetEndpoint>
+		<TargetEndpoint>Payment</TargetEndpoint>
+		<TargetEndpoint>Payment</TargetEndpoint>
+		<TargetEndpoint>Payment</TargetEndpoint>
+		<TargetEndpoint>Payment</TargetEndpoint>
+		<TargetEndpoint>Payment</TargetEndpoint>
+		<TargetEndpoint>Payment</TargetEndpoint>
+		<TargetEndpoint>Payment</TargetEndpoint>
+		<TargetEndpoint>Payment</TargetEndpoint>
+    </TargetEndpoints>
+	<validate>false</validate>
+</APIProxy>

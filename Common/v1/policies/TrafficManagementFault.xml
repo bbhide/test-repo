@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<FlowCallout async="false" continueOnError="false" enabled="true" name="TrafficManagementFault">
+    <DisplayName>TrafficManagementFault</DisplayName>
+    <FaultRules/>
+    <Properties/>
+    <SharedFlowBundle>TrafficManagementFaultHandling</SharedFlowBundle>
+</FlowCallout>

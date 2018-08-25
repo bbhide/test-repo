@@ -1,0 +1,4 @@
+<!-- PaymentDetails Request Flow -->
+<Step>
+  <Name>PaymentDetails_AssignRoutingVariable</Name>
+</Step>

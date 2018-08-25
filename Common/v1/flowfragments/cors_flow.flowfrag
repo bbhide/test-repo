@@ -1,0 +1,15 @@
+<!-- CORS Preflight flow-->
+         <Flow name="CORS">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>getCORSDomainList</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Name>CORSValidation</Name>
+                </Step>
+            </Response>
+            <Condition>(request.verb == "OPTIONS") and (request.header.origin != null)</Condition>
+        </Flow>
